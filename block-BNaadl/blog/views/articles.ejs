@@ -7,14 +7,25 @@
   </head>
   <body>
     <h1>List of Articles</h1>
-    <!-- <% allArticlesArray.forEach(article => { %>
-    <li><%= article.title %></li>
-    <% }) %> -->
+    <% if(allArticlesArray.length) { %>
+
     <ul>
-      <li><%= newArticle.title %></li>
+      <% allArticlesArray.forEach(article => { %>
+      <a href="/articles/<%= article.id %>">
+        <li><%= article.title %></li>
+      </a>
+      <% }) %>
     </ul>
-    <a href="">
-      <button>Like</button>
+
+    <% } else { %>
+    <h5>No articles Present</h5>
+    <% } %>
+
+    <a href="/">
+      <button>Home</button>
+    </a>
+    <a href="/articles">
+      <button>Go to Articles</button>
     </a>
     <a href="">
       <button>Edit</button>
