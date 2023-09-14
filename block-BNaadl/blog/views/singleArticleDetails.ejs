@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1.0, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/singleArticleDetails.css" />
+
+    <title>Single Article Details</title>
+  </head>
+  <body>
+    <h1>Welcome to Single Article Info Page</h1>
+    <h3><%= singleArticleObj.title %></h3>
+    <h4><%= singleArticleObj.description %></h4>
+    <h5>
+      <% singleArticleObj.tags.forEach(tag => { %>
+      <span><%= tag %></span>
+      <% }) %>
+    </h5>
+    <h5><%= singleArticleObj.author %></h5>
+    <h5><%= singleArticleObj.likes ? singleArticleObj.likes : 0 %></h5>
+
+    <a href="/">
+      <button>Home</button>
+    </a>
+    <a href="/articles">
+      <button>Go to Articles</button>
+    </a>
+
+    <a href="/articles/<%= singleArticleObj._id %>/likes">
+      <button>Like</button>
+    </a>
+    <a href="/articles/<%= singleArticleObj._id %>/edit">
+      <button>Edit</button>
+    </a>
+    <a href="/articles/<%= singleArticleObj._id %>/delete">
+      <button>Delete</button>
+    </a>
+  </body>
+</html>
