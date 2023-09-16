@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="/stylesheets/book.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bookstore</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="button-spacing">
+          <a href="/books/new">
+            <button>Add New Book</button>
+          </a>
+        </div>
+        <div class="button-spacing">
+          <a href="/books/index">
+            <button>Home</button>
+          </a>
+        </div>
+        <div class="book-container">
+          <% allBooks.forEach(book =>{ %>
+          <!-- Book 1 -->
+          <div class="book flex">
+            <div class="flex-50">
+              <img
+                src="<%= book.cover_image.replace(/public/g, '')%>"
+                alt="Book Cover"
+                width="100%"
+              />
+            </div>
+            <div class="flex-50 book-details">
+              <h2 class="book-title"><%= book.title %></h2>
+              <p class="book-summary"><%= book.summary %></p>
+              <div class="book-info">
+                <span class="book-info-item">Pages: <%= book.pages %></span>
+                <span class="book-info-item"
+                  >Publication: <%= book.publication %></span
+                >
+                <span class="book-info-item"
+                  >Category: <%= book.category %></span
+                >
+                <span class="book-info-item book-author"
+                  >Author: <%= book.author %></span
+                >
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
