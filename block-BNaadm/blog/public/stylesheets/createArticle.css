@@ -1,0 +1,14 @@
+.conatiner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input,
+label {
+  display: block;
+  margin: 1rem 0;
+}
