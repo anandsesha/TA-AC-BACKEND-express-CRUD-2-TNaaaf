@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1.0, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/createArticle.css" />
+    <title>Edit Create Form page</title>
+  </head>
+  <body>
+    <h1>Edit Article Form</h1>
+    <div class="container">
+      <form action="/articles/<%= oneArticle._id %>" method="post">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter Article Title"
+          value="<%= oneArticle.title %>"
+        />
+        <label for="description">Description:</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Enter Article Description"
+        >
+            <%= oneArticle.description %>
+        </textarea>
+        <label for="tags">Tags:</label>
+        <input
+          type="text"
+          name="tags"
+          id="tags"
+          placeholder="Enter Tags"
+          value="<%= oneArticle.tags %>"
+        />
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Enter Author"
+          value="<%= oneArticle.author %>"
+        />
+        <input type="submit" value="Update Article" />
+        <a href="/articles">
+          <button>Go to Articles</button>
+        </a>
+      </form>
+    </div>
+  </body>
+</html>
